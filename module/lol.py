@@ -1,5 +1,7 @@
-import game
-import shop
+# from function.game import show_info as game_show_info, play_game
+import function
+from function.shop import show_info as shop_show_info, buy_item
+import friends
 
 def turn_on():
     print('= Turn on game =')
@@ -9,16 +11,21 @@ def turn_on():
         'What would you like to do?\n'
         '1: Go to Shop\n'
         '2: Play Game\n'
+        '3: chat\n'
         '0: Exit\n'
         'Input : '
         )
         if choice == '0':
             break
         elif choice == '1':
-            shop.buy_item()
+            shop_show_info()
+            buy_item()
         elif choice == '2':
-            game.play_game()
-        else
+            function.game.show_info()
+            function.game.play_game()
+        elif choice == '3':
+            friends.send_message.send_message()
+        else:
             print('Choice not exist')
         print('--------------------')
 
